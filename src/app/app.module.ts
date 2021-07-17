@@ -1,3 +1,4 @@
+import { ForgotPasswordComponent } from './views/auth/forgot-password/forgot-password.component';
 import { ProjectModule } from './views/admin/project/project.module';
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
@@ -49,9 +50,9 @@ import { NotificationDropdownComponent } from "./components/dropdowns/notificati
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatInputModule} from '@angular/material/input';
+import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from "@angular/router";
 
 @NgModule({
@@ -90,9 +91,10 @@ import { RouterModule } from "@angular/router";
     IndexComponent,
     LandingComponent,
     ProfileComponent,
+    ForgotPasswordComponent
   ],
-  imports: [BrowserModule, AppRoutingModule,ProjectModule, BrowserAnimationsModule,MatFormFieldModule,MatInputModule,FormsModule, ReactiveFormsModule,RouterModule ],
+  imports: [BrowserModule, AppRoutingModule, ProjectModule, BrowserAnimationsModule, MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, RouterModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
