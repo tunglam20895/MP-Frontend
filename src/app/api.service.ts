@@ -24,7 +24,7 @@ export class APIService {
 
   public login(user: Users): Observable<any> {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(user.username + ':' + user.password) });
-    return this._http.get("http://localhost:8081/login", { headers })
+    return this._http.get("http://localhost:8081/public/login", { headers })
   }
 
   public createAccount(user: Users) {

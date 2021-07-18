@@ -1,28 +1,54 @@
-import { Component, OnInit } from "@angular/core";
-import {FormControl, FormGroupDirective, NgForm,FormGroup, Validators} from '@angular/forms';
-import {ErrorStateMatcher} from '@angular/material/core';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroupDirective, NgForm, FormGroup, Validators } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { Router } from '@angular/router';
+import { Users } from 'src/app/users';
+import { APIService } from '../../../api.service'
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
+  selector: 'app-login',
+  templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+  user: Users = new Users();
+  isLoggedIn: any;
+  ivalidMessage: string;
 
-  loginForm = new FormGroup({
-    email: new FormControl('',Validators.required),
-    password: new FormControl('',Validators.required)
-  })
+  constructor(private _service: APIService, private router: Router) { }
 
-  get email(){
+  get email() {
     return this.loginForm.get('email')
   }
 
-  get password(){
+  get password() {
     return this.loginForm.get('password')
+  }
+
+  loginForm = new FormGroup({
+    email: new FormControl('', Validators.required),
+    password: new FormControl('', Validators.required)
+  })
+
+  ngOnInit(): void { }
+
+  loginUser() {
+    this._service.login(this.user).subscribe(
+      data => {
+        console.log('Đăng nhập thành công');
+        console.log(data);
+        this.isLoggedIn = true;
+        this.router.navigate(['/admin/dashboard']);
+        localStorage.setItem('currentUser', JSON.stringify(this.user));
+      },
+      err => {
+        console.log('Sai username hoặc password');
+        this.ivalidMessage = 'Sai username hoặc password';
+        this.isLoggedIn = false;
+
+      }
+    )
   }
 
   // emailFormControl = new FormControl('', [
