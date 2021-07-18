@@ -54,6 +54,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from "@angular/router";
+import { HttpClientModule } from '@angular/common/http';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -93,7 +95,19 @@ import { RouterModule } from "@angular/router";
     ProfileComponent,
     ForgotPasswordComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, ProjectModule, BrowserAnimationsModule, MatFormFieldModule, MatInputModule, FormsModule, ReactiveFormsModule, RouterModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ProjectModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    RouterModule,
+    HttpClientModule,
+    NgxPaginationModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
