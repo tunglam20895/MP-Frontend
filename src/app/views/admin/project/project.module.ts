@@ -35,7 +35,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     RouterModule,
     MatTableModule,
     MatTabsModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxPaginationModule
 >>>>>>> cc1a5d4562a37afa06b1bbff25c39b5b13041ee6
   ]
 
