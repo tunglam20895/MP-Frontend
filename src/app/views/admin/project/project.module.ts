@@ -20,16 +20,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
-<<<<<<< HEAD
-  declarations: [ProjectDetailComponent,
-    ProjectComponent],
-  imports: [
-    CommonModule,
-    RouterModule,
-    NgxPaginationModule
-=======
   declarations: [ProjectDetailComponent, ProjectTeamComponent,
-    ProjectComponent, CardLineChartComponent, CardBarChartComponent, CardPageVisitsComponent, CardSocialTrafficComponent,ProjectResComponent,  ProjectDasboardComponent],
+    ProjectComponent, CardLineChartComponent, CardBarChartComponent, CardPageVisitsComponent, CardSocialTrafficComponent, ProjectResComponent, ProjectDasboardComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -37,7 +29,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTabsModule,
     MatDialogModule,
     NgxPaginationModule
->>>>>>> cc1a5d4562a37afa06b1bbff25c39b5b13041ee6
   ]
 
 })
