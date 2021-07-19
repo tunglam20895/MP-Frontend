@@ -6,9 +6,9 @@ import Chart from "chart.js";
   templateUrl: "./card-line-chart.component.html",
 })
 export class CardLineChartComponent implements OnInit {
-  constructor() {}
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
   ngAfterViewInit() {
     var config = {
       type: "line",

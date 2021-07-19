@@ -1,4 +1,4 @@
-<div class="flex flex-wrap">
+<!-- <div class="flex flex-wrap">
     <div class="w-full px-4">
         <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
             <div class="container flex flex-col mx-auto w-full items-center justify-center">
@@ -201,4 +201,25 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
+<div class="flex flex-wrap">
+    <div class="w-full px-4">
+      <div
+        class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded"
+      >
+        <!-- <app-map-example></app-map-example> -->
+        <mat-tab-group>
+            <mat-tab label="Team">
+                <ngx-project-team></ngx-project-team>
+            </mat-tab>
+            <mat-tab label="Dasboard">
+                <ngx-project-dasboard></ngx-project-dasboard>
+            </mat-tab>
+            <mat-tab label="Third"> 
+                <ngx-project-res></ngx-project-res>
+            </mat-tab>
+          </mat-tab-group>
+      </div>
+    </div>
+  </div>
+  
