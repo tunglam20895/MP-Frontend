@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Users } from './users';
+import { Users } from './entities/users';
 
 @Injectable({
   providedIn: 'root'
@@ -14,12 +14,12 @@ export class APIService {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
   }
 
-  public admin() {
+  public getauthorization() {
     // const username = 'admin';
     // const password = 'admin';
     console.log(this.currentUser.username);
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
-    return this._http.get("http://localhost:8081/admin", { headers });
+    return this._http.get("http://localhost:8081/public/authorization", { headers });
   }
 
   public login(user: Users): Observable<any> {
@@ -37,5 +37,10 @@ export class APIService {
 
   public resetPassword(username: string, email: string) {
     return this._http.post("http://localhost:8081/public/reset-password", { username: username, email: email });
+  }
+
+  public getListProject() {
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
+    return this._http.get("http://localhost:8081/project/list/" + this.currentUser.username, { headers });
   }
 }

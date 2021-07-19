@@ -7,8 +7,10 @@ import { createPopper } from "@popperjs/core";
 })
 export class UserDropdownComponent implements AfterViewInit {
   dropdownPopoverShow = false;
+
   @ViewChild("btnDropdownRef", { static: false }) btnDropdownRef: ElementRef;
   @ViewChild("popoverDropdownRef", { static: false })
+
   popoverDropdownRef: ElementRef;
   ngAfterViewInit() {
     createPopper(
@@ -26,5 +28,10 @@ export class UserDropdownComponent implements AfterViewInit {
     } else {
       this.dropdownPopoverShow = true;
     }
+  }
+
+  logout() {
+    localStorage.setItem('currentUser', JSON.stringify(null));
+
   }
 }

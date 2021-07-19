@@ -5,7 +5,11 @@ import { Component, OnInit } from "@angular/core";
   templateUrl: "./admin-navbar.component.html",
 })
 export class AdminNavbarComponent implements OnInit {
-  constructor() {}
 
-  ngOnInit(): void {}
+  user: any;
+
+  constructor(
+  ) { this.user = JSON.parse(localStorage.getItem('currentUser') || '') }
+
+  ngOnInit(): void { }
 }

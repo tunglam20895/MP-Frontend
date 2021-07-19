@@ -1,7 +1,7 @@
 import { FormGroup, Validators, FormControl, } from '@angular/forms';
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
-import { Users } from 'src/app/users';
+import { Users } from 'src/app/entities/users';
 import { APIService } from '../../../api.service'
 
 @Component({

@@ -2,18 +2,20 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ProjectComponent } from './project.component';
 
 
 
 @NgModule({
   declarations: [ProjectDetailComponent,
-  ProjectComponent],
+    ProjectComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    NgxPaginationModule
   ]
-  
+
 })
 
 export class ProjectModule { }
