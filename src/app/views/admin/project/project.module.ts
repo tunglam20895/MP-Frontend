@@ -10,6 +10,7 @@ import { ProjectDetailComponent } from './project-detail/project-detail.componen
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ProjectComponent } from './project.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDialogModule } from '@angular/material/dialog';
@@ -19,6 +20,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 
 @NgModule({
+<<<<<<< HEAD
+  declarations: [ProjectDetailComponent,
+    ProjectComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    NgxPaginationModule
+=======
   declarations: [ProjectDetailComponent, ProjectTeamComponent,
     ProjectComponent, CardLineChartComponent, CardBarChartComponent, CardPageVisitsComponent, CardSocialTrafficComponent,ProjectResComponent,  ProjectDasboardComponent],
   imports: [
@@ -26,7 +35,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     RouterModule,
     MatTableModule,
     MatTabsModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxPaginationModule
+>>>>>>> cc1a5d4562a37afa06b1bbff25c39b5b13041ee6
   ]
 
 })
