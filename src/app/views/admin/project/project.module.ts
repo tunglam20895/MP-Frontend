@@ -25,9 +25,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatTableModule,
     MatTabsModule,
     MatDialogModule,
-    NgxPaginationModule,
+    NgxPaginationModule
   ]
 
 })
-
 export class ProjectModule { }

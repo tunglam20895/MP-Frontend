@@ -1,5 +1,8 @@
 import { MatDialog } from '@angular/material/dialog';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { APIService } from 'src/app/api.service';
+import { NgxPaginationModule } from 'ngx-pagination';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
   selector: 'ngx-project-team',
@@ -7,17 +10,53 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./project-team.component.scss']
 })
 export class ProjectTeamComponent implements OnInit {
-  constructor(public dialog: MatDialog) { }
+  userProject: any;
+  totalLength: any;
+  page: number = 1;
+
+  constructor(
+    public dialog: MatDialog, private _service: APIService) { }
 
   ngOnInit() {
-    this.openDialog
+    this.openDialog;
+    this._service.getListUserProject().subscribe((data: any) => {
+      this.userProject = data;
+      this.totalLength = data.length;
+    }, err => {
+      console.log("Lỗi truy cập");
+    })
   }
   openDialog() {
     const dialogRef = this.dialog.open(ProjectTeam);
-
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
     });
+  }
+
+  getUserProjectAnCdDelete(userProject) {
+    localStorage.setItem('userProject', JSON.stringify(userProject));
+    console.log(userProject);
+    Swal.fire({
+      title: 'Bạn có chắc chắc muốn xóa thành viên này?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'OK'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this._service.DeleteUser().subscribe(data => {
+          Swal.fire(
+            'Xóa thành công!',
+          )
+        }, error => {
+          Swal.fire(
+            'Xóa thất bại',
+          )
+        })
+
+      }
+    })
   }
 }
 

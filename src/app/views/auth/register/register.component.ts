@@ -12,7 +12,7 @@ import { APIService } from '../../../api.service'
 export class RegisterComponent implements OnInit {
 
   constructor(
-    public _service: APIService, private router: Router
+    private _service: APIService, private router: Router
 
   ) { }
 

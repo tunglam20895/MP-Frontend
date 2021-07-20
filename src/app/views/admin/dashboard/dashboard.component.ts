@@ -11,11 +11,11 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(
   ) {
-    this._service.getListProject().subscribe(data => {
-      console.log(data);
-    }, err => {
-      console.log(err)
-      this.router.navigate(['/auth/login']);
-    })
+    // this._service.getAut().subscribe(data => {
+    //   console.log(data);
+    // }, err => {
+    //   console.log(err)
+    //   this.router.navigate(['/auth/login']);
+    // })
   }
 }
