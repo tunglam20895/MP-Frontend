@@ -1,5 +1,5 @@
 import { MatDialog } from '@angular/material/dialog';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { APIService } from 'src/app/api.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
@@ -13,6 +13,9 @@ export class ProjectTeamComponent implements OnInit {
   userProject: any;
   totalLength: any;
   page: number = 1;
+  isClick = false;
+
+  @ViewChild('username') username!: ElementRef;
 
   constructor(
     public dialog: MatDialog, private _service: APIService) { }
@@ -27,11 +30,19 @@ export class ProjectTeamComponent implements OnInit {
     })
   }
   openDialog() {
-    const dialogRef = this.dialog.open(ProjectTeam);
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+    // const dialogRef = this.dialog.open(ProjectTeam);
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
+    this.isClick = true;
   }
+
+  addUser() {
+    this._service.addUser(this.username.nativeElement.value).subscribe(data => {
+      console.log("ADD thành công");
+    }, err => console.log("ADD thất bại"))
+  }
+
 
   getUserProjectAnCdDelete(userProject) {
     localStorage.setItem('userProject', JSON.stringify(userProject));
@@ -54,7 +65,6 @@ export class ProjectTeamComponent implements OnInit {
             'Xóa thất bại',
           )
         })
-
       }
     })
   }

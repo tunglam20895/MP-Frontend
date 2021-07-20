@@ -72,7 +72,7 @@ export class APIService {
     this.pro = JSON.parse(localStorage.getItem('Project'));
     this.id = this.pro.id;
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
-    return this._http.post("http://localhost:8081/project/add-user/" + this.id, { headers });
+    return this._http.post("http://localhost:8081/project/add-user/" + this.id, username, { headers });
   }
 
 
