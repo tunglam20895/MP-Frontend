@@ -56,6 +56,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { StaffComponent } from './views/admin/staff/staff.component';
 
 @NgModule({
   declarations: [
@@ -93,7 +94,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     IndexComponent,
     LandingComponent,
     ProfileComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    StaffComponent
   ],
   imports: [
     BrowserModule,

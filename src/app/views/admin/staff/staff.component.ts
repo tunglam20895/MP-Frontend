@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { APIService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-staff',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StaffComponent implements OnInit {
 
-  constructor() { }
+  members: any;
+  totalLength: any;
+  page: number = 1;
 
-  ngOnInit() {
+  constructor(private _service: APIService, private router: Router) { }
+
+  ngOnInit(
+  ) {
+    this._service.getListMembers().subscribe((data: any) => {
+      console.log("Hello bé: " + data);
+      this.members = data;
+    }, err => {
+      console.log(err);
+    })
   }
 
 }

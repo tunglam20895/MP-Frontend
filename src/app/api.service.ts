@@ -75,5 +75,9 @@ export class APIService {
     return this._http.post("http://localhost:8081/project/add-user/" + this.id, username, { headers });
   }
 
+  public getListMembers() {
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
+    return this._http.get("http://localhost:8081/member/get-member", { headers });
+  }
 
 }
