@@ -57,6 +57,7 @@ import { RouterModule } from "@angular/router";
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { StaffComponent } from './views/admin/staff/staff.component';
+import { ProjectComponent } from './views/admin/project/project.component';
 
 @NgModule({
   declarations: [
@@ -95,7 +96,8 @@ import { StaffComponent } from './views/admin/staff/staff.component';
     LandingComponent,
     ProfileComponent,
     ForgotPasswordComponent,
-    StaffComponent
+    StaffComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,
@@ -108,7 +110,8 @@ import { StaffComponent } from './views/admin/staff/staff.component';
     ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ProjectModule
   ],
   providers: [],
   bootstrap: [AppComponent],

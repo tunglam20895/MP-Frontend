@@ -7,7 +7,9 @@ import { APIService } from "src/app/api.service";
   templateUrl: "./dashboard.component.html",
 })
 export class DashboardComponent implements OnInit {
-  constructor(public _service: APIService, private router: Router) { }
+  constructor(
+    // public _service: APIService, private router: Router
+  ) { }
 
   ngOnInit(
   ) {

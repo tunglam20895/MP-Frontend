@@ -76,8 +76,25 @@ export class APIService {
   }
 
   public getListMembers() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
     return this._http.get("http://localhost:8081/member/get-member", { headers });
+  }
+
+  public getListTransferProject() {
+    this.pro = JSON.parse(localStorage.getItem('Project'));
+    this.id = this.pro.id;
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
+    return this._http.get("http://localhost:8081/project/get-transfer-project/" + this.id, { headers });
+  }
+
+  public letTransferUerProject(userTrans: any, id: number): Observable<any> {
+    const headers = new HttpHeaders({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password)
+    });
+    return this._http.post("http://localhost:8081/project/transfer-user/" + id, userTrans, { headers });
   }
 
 }

@@ -144,7 +144,8 @@
                       {{ pro.pmFirstName + " " + pro.pmLastName }}
                     </p>
                     <p class="text-gray-400 dark:text-gray-300">
-                      {{ pro.dateStarted }} - {{ pro.dateEnd }}
+                      {{ pro.dateStarted | date: "fullDate" }} -
+                      {{ pro.dateEnd | date: "fullDate" }}
                     </p>
                   </div>
                 </div>

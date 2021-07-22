@@ -3,6 +3,8 @@ import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
 import { APIService } from 'src/app/api.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
+import { UserProjectDto } from 'src/app/dto/userProjectDto';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'ngx-project-team',
@@ -14,11 +16,20 @@ export class ProjectTeamComponent implements OnInit {
   totalLength: any;
   page: number = 1;
   isClick = false;
+  isClickTransfer = false;
+  listTransfer: any;
+  selectedDevice: any;
+
+  newUserTranfer: any;
+  id: any;
+
 
   @ViewChild('username') username!: ElementRef;
+  @ViewChild('idProjectTransfer') idProjectTranfer!: ElementRef;
+  @ViewChild('userTranfer') userTranfer!: ElementRef;
 
   constructor(
-    public dialog: MatDialog, private _service: APIService) { }
+    public dialog: MatDialog, private _service: APIService, private router: Router) { }
 
   ngOnInit() {
     this.openDialog;
@@ -39,8 +50,24 @@ export class ProjectTeamComponent implements OnInit {
 
   addUser() {
     this._service.addUser(this.username.nativeElement.value).subscribe(data => {
-      console.log("ADD thành công");
-    }, err => console.log("ADD thất bại"))
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Thêm thành viên thành công',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      window.location.reload();
+    }, err => {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Thêm thành viên thấp bại',
+        showConfirmButton: false,
+        timer: 1500
+      })
+
+    })
   }
 
 
@@ -60,6 +87,7 @@ export class ProjectTeamComponent implements OnInit {
           Swal.fire(
             'Xóa thành công!',
           )
+          window.location.reload();
         }, error => {
           Swal.fire(
             'Xóa thất bại',
@@ -67,6 +95,44 @@ export class ProjectTeamComponent implements OnInit {
         })
       }
     })
+  }
+
+
+  getListTransferProject() {
+    this._service.getListTransferProject().subscribe(data => {
+      this.isClickTransfer = true;
+      this.listTransfer = data;
+    }, err => console.log("Lỗi " + err))
+  }
+
+  onClickTransfer(newUser: any) {
+    console.log(newUser);
+    this.newUserTranfer = newUser;
+  }
+
+  getUserTransfer() {
+    this.id = JSON.parse(this.idProjectTranfer.nativeElement.value)
+    console.log(this.newUserTranfer);
+    this._service.letTransferUerProject(this.newUserTranfer, this.id).subscribe(data => {
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Điều chuyển thành công',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      window.location.reload();
+    }, err => {
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Điều chuyển thất bại',
+        showConfirmButton: false,
+        timer: 1500
+      })
+
+    }
+    )
   }
 }
 

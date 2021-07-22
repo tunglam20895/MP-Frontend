@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { APIService } from 'src/app/api.service';
@@ -9,7 +9,7 @@ import { TransferService } from '../../../transfer.service';
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css']
 })
-export class ProjectComponent implements OnInit, AfterViewInit {
+export class ProjectComponent implements OnInit {
   project: any;
   totalLength: any;
   page: number = 1;
@@ -26,10 +26,6 @@ export class ProjectComponent implements OnInit, AfterViewInit {
       console.log("Lỗi truy cập" + err)
 
     })
-  }
-
-  ngAfterViewInit() {
-
   }
 
   getUserIdAndProjectId() {
