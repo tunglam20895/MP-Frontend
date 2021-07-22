@@ -23,7 +23,7 @@
     "
   >
     <h3 class="text-lg leading-6 font-bold text-gray-900 dark:text-white">
-      Thành viên trong dự án
+      Thành viên trong dự án: {{ userProject.length }}
     </h3>
 
     <!-- modal -->
@@ -87,6 +87,127 @@
         Thêm thành viên
       </button></ng-template
     >
+
+    <ng-container
+      *ngIf="isClickTransfer; then thenTemplateT; else elseTemplateT"
+    ></ng-container>
+    <ng-template #thenTemplateT>
+      <div class="inline-block relative w-64 ml-5">
+        <select
+          class="
+            block
+            appearance-none
+            w-full
+            bg-white
+            border border-gray-400
+            hover:border-gray-500
+            px-4
+            py-2
+            pr-8
+            rounded
+            shadow
+            leading-tight
+            focus:outline-none focus:shadow-outline
+          "
+          #userTranfer
+          (change)="onClickTransfer($event.target.value)"
+        >
+          <option>Chọn nhân viên điều chuyển</option>
+          <option *ngFor="let u of userProject" value="{{ u | json }}">
+            {{ u.username }}
+          </option>
+        </select>
+        <div
+          class="
+            pointer-events-none
+            absolute
+            inset-y-0
+            right-0
+            flex
+            items-center
+            px-2
+            text-gray-700
+          "
+        ></div>
+      </div>
+
+      <div class="inline-block relative w-64 ml-5">
+        <select
+          class="
+            block
+            appearance-none
+            w-full
+            bg-white
+            border border-gray-400
+            hover:border-gray-500
+            px-4
+            py-2
+            pr-8
+            rounded
+            shadow
+            leading-tight
+            focus:outline-none focus:shadow-outline
+          "
+          #idProjectTransfer
+        >
+          <option>Chọn Project điều chuyển đến</option>
+          <option *ngFor="let lt of listTransfer" value="{{ lt.id }}">
+            {{ lt.name }}
+          </option>
+        </select>
+        <div
+          class="
+            pointer-events-none
+            absolute
+            inset-y-0
+            right-0
+            flex
+            items-center
+            px-2
+            text-gray-700
+          "
+        ></div>
+      </div>
+      <button
+        class="
+          bg-blue-500
+          hover:bg-blue-700
+          text-white
+          font-bold
+          py-2
+          px-4
+          border border-blue-700
+          rounded
+          ml-5
+        "
+        (click)="getUserTransfer()"
+      >
+        Xác nhận
+      </button>
+    </ng-template>
+
+    <ng-template #elseTemplateT>
+      <button
+        class="
+          bg-gray-200
+          text-gray-800
+          font-bold
+          rounded
+          border-b-2 border-green-500
+          hover:border-green-600 hover:bg-green-500 hover:text-white
+          shadow-md
+          py-2
+          px-6
+          inline-flex
+          items-center
+          ml-5
+        "
+        mat-button
+        (click)="getListTransferProject()"
+      >
+        Điều chuyển thành viên
+      </button>
+    </ng-template>
 
     <!-- /modal -->
   </div>
