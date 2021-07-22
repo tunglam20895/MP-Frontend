@@ -1,12 +1,6 @@
-<a
-  class="text-blueGray-500 block"
-  href="#pablo"
-  (click)="toggleDropdown($event)"
-  #btnDropdownRef
->
+<a class="text-blueGray-500 block" href="#pablo" (click)="toggleDropdown($event)" #btnDropdownRef>
   <div class="items-center flex">
-    <span
-      class="
+    <span class="
         w-12
         h-12
         text-sm text-white
@@ -15,19 +9,14 @@
         items-center
         justify-center
         rounded-full
-      "
-    >
-      <img
-        alt="..."
-        class="w-full rounded-full align-middle border-none shadow-lg"
-        src="assets/img/team-1-800x800.jpg"
-      />
+      ">
+      <img alt="..." class="w-full rounded-full align-middle border-none shadow-lg"
+        src="assets/img/team-1-800x800.jpg" />
     </span>
   </div>
 </a>
 <div class="min-w-48 z-50" #popoverDropdownRef>
-  <div
-    class="
+  <div class="
       bg-white
       text-base
       z-50
@@ -39,12 +28,8 @@
       shadow-lg
       mt-1
       min-w-48
-    "
-    [ngClass]="dropdownPopoverShow ? 'block' : 'hidden'"
-  >
-    <a
-      href="#pablo"
-      class="
+    " [ngClass]="dropdownPopoverShow ? 'block' : 'hidden'">
+    <a [routerLink]="['/profile']" href="#pablo" class="
         text-sm
         py-2
         px-4
@@ -54,13 +39,10 @@
         whitespace-nowrap
         bg-transparent
         text-blueGray-700
-      "
-    >
-      Action
+      ">
+      Hồ sơ
     </a>
-    <a
-      href="#pablo"
-      class="
+    <a [routerLink]="['/landing']" href="#pablo" class="
         text-sm
         py-2
         px-4
@@ -70,13 +52,10 @@
         whitespace-nowrap
         bg-transparent
         text-blueGray-700
-      "
-    >
-      Another action
+      ">
+      Trang chủ
     </a>
-    <a
-      href="#pablo"
-      class="
+    <a href="#pablo" class="
         text-sm
         py-2
         px-4
@@ -86,15 +65,11 @@
         whitespace-nowrap
         bg-transparent
         text-blueGray-700
-      "
-    >
+      ">
       Something else here
     </a>
     <div class="h-0 my-2 border border-solid border-blueGray-100"></div>
-    <a
-      (click)="logout()"
-      [routerLink]="['/auth/login']"
-      class="
+    <a (click)="logout()" [routerLink]="['/auth/login']" class="
         text-sm
         py-2
         px-4
@@ -104,9 +79,8 @@
         whitespace-nowrap
         bg-transparent
         text-blueGray-700
-      "
-    >
-      Logout
+      ">
+      Đăng xuất
     </a>
   </div>
 </div>

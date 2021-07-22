@@ -1,3 +1,4 @@
+import { StaffUpdateComponent } from './views/admin/staff/staff-update/staff-update.component';
 import { ForgotPasswordComponent } from './views/auth/forgot-password/forgot-password.component';
 import { ProjectDetailComponent } from './views/admin/project/project-detail/project-detail.component';
 import { ReportComponent } from './views/admin/report/report.component';
@@ -40,6 +41,7 @@ const routes: Routes = [
       { path: "project", component: ProjectComponent },
       { path: "project/detail", component: ProjectDetailComponent },
       { path: "staff", component: StaffComponent },
+      { path: "staff/update", component: StaffUpdateComponent },
       { path: "issues", component: IssuesComponent },
       { path: "report", component: ReportComponent },
       { path: "permission", component: PermissionComponent },
