@@ -17,7 +17,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [ProjectDetailComponent, ProjectTeamComponent, ProjectComponent,
-    CardLineChartComponent, CardBarChartComponent, CardPageVisitsComponent, CardSocialTrafficComponent, ProjectResComponent, ProjectDasboardComponent],
+     ProjectResComponent, ProjectDasboardComponent],
 
   imports: [
     CommonModule,

@@ -13,7 +13,7 @@ export class APIService {
   id: number;
 
   constructor(private _http: HttpClient) {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
 
   }
 
@@ -43,13 +43,13 @@ export class APIService {
   }
 
   public getListProject() {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
     return this._http.get("http://localhost:8081/project/list/" + this.currentUser.username, { headers });
   }
 
   public getListUserProject() {
-    this.pro = JSON.parse(localStorage.getItem('Project'));
+    this.pro = JSON.parse(localStorage.getItem('Project') || '');
     this.id = this.pro.id;
     console.log(this.id);
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
@@ -62,27 +62,27 @@ export class APIService {
   }
 
   public DeleteUser() {
-    this.userProjectId = JSON.parse(localStorage.getItem('userProject'));
+    this.userProjectId = JSON.parse(localStorage.getItem('userProject') || '');
     console.log(this.id);
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
     return this._http.delete("http://localhost:8081/project/delete-user-project/" + this.userProjectId, { headers });
   }
 
   public addUser(username: string): Observable<any> {
-    this.pro = JSON.parse(localStorage.getItem('Project'));
+    this.pro = JSON.parse(localStorage.getItem('Project') || '');
     this.id = this.pro.id;
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
     return this._http.post("http://localhost:8081/project/add-user/" + this.id, username, { headers });
   }
 
   public getListMembers() {
-    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
     return this._http.get("http://localhost:8081/member/get-member", { headers });
   }
 
   public getListTransferProject() {
-    this.pro = JSON.parse(localStorage.getItem('Project'));
+    this.pro = JSON.parse(localStorage.getItem('Project') || '');
     this.id = this.pro.id;
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
     return this._http.get("http://localhost:8081/project/get-transfer-project/" + this.id, { headers });

@@ -1,3 +1,6 @@
+import { UpdateProfileMemberComponent } from './views/member/update-profile-member/update-profile-member.component';
+import { ProfileMemberComponent } from './views/member/profile-member/profile-member.component';
+import { MemberComponent } from './views/member/member.component';
 import { StaffUpdateComponent } from './views/admin/staff/staff-update/staff-update.component';
 import { ForgotPasswordComponent } from './views/auth/forgot-password/forgot-password.component';
 import { ProjectDetailComponent } from './views/admin/project/project-detail/project-detail.component';
@@ -59,12 +62,26 @@ const routes: Routes = [
       { path: "", redirectTo: "login", pathMatch: "full" },
     ],
   },
+
+
+  {
+    path: "member",
+    component: MemberComponent,
+    children: [
+      { path: "profile", component: ProfileMemberComponent },
+      { path: "update", component: UpdateProfileMemberComponent },
+      { path: "", redirectTo: "profile", pathMatch: "full" },
+    ],
+  },
+
   // no layout views
   { path: "profile", component: ProfileComponent },
   { path: "landing", component: LandingComponent },
   { path: "", component: IndexComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

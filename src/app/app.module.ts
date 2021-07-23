@@ -1,3 +1,6 @@
+import { ProfileMemberComponent } from './views/member/profile-member/profile-member.component';
+import { HeaderMemberComponent } from './components/headers/header-stats/header-member/header-member.component';
+import { MemberComponent } from './views/member/member.component';
 import { ForgotPasswordComponent } from './views/auth/forgot-password/forgot-password.component';
 import { ProjectModule } from './views/admin/project/project.module';
 import { BrowserModule } from "@angular/platform-browser";
@@ -64,8 +67,10 @@ import { ProjectComponent } from './views/admin/project/project.component';
     AppComponent,
     DashboardComponent,
     CardBarChartComponent,
+    HeaderMemberComponent,
     CardLineChartComponent,
     IndexDropdownComponent,
+    ProfileMemberComponent,
     PagesDropdownComponent,
     TableDropdownComponent,
     NotificationDropdownComponent,
@@ -74,6 +79,7 @@ import { ProjectComponent } from './views/admin/project/project.component';
     FooterComponent,
     FooterSmallComponent,
     FooterAdminComponent,
+    MemberComponent,
     CardPageVisitsComponent,
     CardProfileComponent,
     CardSettingsComponent,
@@ -92,12 +98,12 @@ import { ProjectComponent } from './views/admin/project/project.component';
     TablesComponent,
     LoginComponent,
     RegisterComponent,
+    ForgotPasswordComponent,
     IndexComponent,
     LandingComponent,
-    ProfileComponent,
-    ForgotPasswordComponent,
     StaffComponent,
-    ProjectComponent
+    ProfileComponent,
+
   ],
   imports: [
     BrowserModule,

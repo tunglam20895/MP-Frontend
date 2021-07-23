@@ -64,8 +64,8 @@
             Thêm
           </button>
         </form>
-      </div></ng-template
-    >
+      </div>
+    </ng-template>
     <ng-template #elseTemplate>
       <button
         class="
@@ -85,8 +85,8 @@
         (click)="openDialog()"
       >
         Thêm thành viên
-      </button></ng-template
-    >
+      </button>
+    </ng-template>
 
     <ng-container
       *ngIf="isClickTransfer; then thenTemplateT; else elseTemplateT"
@@ -110,7 +110,7 @@
             focus:outline-none focus:shadow-outline
           "
           #userTranfer
-          (change)="onClickTransfer($event.target.value)"
+          (change)="onClickTransfer($event.target)"
         >
           <option>Chọn nhân viên điều chuyển</option>
           <option *ngFor="let u of userProject" value="{{ u | json }}">

@@ -1,8 +1,7 @@
 <div class="container mx-auto px-4 h-full">
   <div class="flex content-center items-center justify-center h-full">
     <div class="w-full lg:w-6/12 px-4">
-      <div
-        class="
+      <div class="
           relative
           flex flex-col
           min-w-0
@@ -13,15 +12,13 @@
           rounded-lg
           bg-blueGray-200
           border-0
-        "
-      >
+        ">
         <div class="rounded-t mb-0 px-6 py-6">
           <div class="text-center mb-3">
             <h6 class="text-blueGray-500 text-sm font-bold">Sign up with</h6>
           </div>
           <div class="btn-wrapper text-center">
-            <button
-              class="
+            <button class="
                 bg-white
                 active:bg-blueGray-50
                 text-blueGray-700
@@ -43,14 +40,11 @@
                 ease-linear
                 transition-all
                 duration-150
-              "
-              type="button"
-            >
+              " type="button">
               <img alt="..." class="w-5 mr-1" src="assets/img/github.svg" />
               Github
             </button>
-            <button
-              class="
+            <button class="
                 bg-white
                 active:bg-blueGray-50
                 text-blueGray-700
@@ -72,9 +66,7 @@
                 ease-linear
                 transition-all
                 duration-150
-              "
-              type="button"
-            >
+              " type="button">
               <img alt="..." class="w-5 mr-1" src="assets/img/google.svg" />
               Google
             </button>
@@ -87,18 +79,10 @@
           </div>
           <form [formGroup]="signUpForm" #f="ngForm">
             <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
                 First Name
               </label>
-              <input
-                [(ngModel)]="user.firstName"
-                name="firstName"
-                type="text"
-                formControlName="firstName"
-                class="
+              <input [(ngModel)]="user.firstName" name="firstName" type="text" formControlName="firstName" class="
                   border-0
                   px-3
                   py-3
@@ -113,27 +97,17 @@
                   ease-linear
                   transition-all
                   duration-150
-                "
-                placeholder="First Name"
-              />
-              <span *ngIf="firstName.invalid && firstName.touched"
-                >First Name k dc de trong</span
-              >
+                " placeholder="First Name" />
+              <!-- <span *ngIf="firstName.invalid && firstName.touched">First Name k dc de trong</span> -->
+              <span >First Name k dc de trong</span>
+
             </div>
 
             <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
                 Last Name
               </label>
-              <input
-                type="text"
-                [(ngModel)]="user.lastName"
-                name="lastName"
-                formControlName="lastName"
-                class="
+              <input type="text" [(ngModel)]="user.lastName" name="lastName" formControlName="lastName" class="
                   border-0
                   px-3
                   py-3
@@ -148,27 +122,17 @@
                   ease-linear
                   transition-all
                   duration-150
-                "
-                placeholder="Last Name"
-              />
-              <span *ngIf="lastName.invalid && lastName.touched"
-                >Last Name k dc de trong</span
-              >
+                " placeholder="Last Name" />
+              <!-- <span *ngIf="lastName.invalid && lastName.touched">Last Name k dc de trong</span> -->
+              <span >Last Name k dc de trong</span>
+
             </div>
 
             <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
                 User Name
               </label>
-              <input
-                type="text"
-                [(ngModel)]="user.username"
-                name="username"
-                formControlName="userName"
-                class="
+              <input type="text" [(ngModel)]="user.username" name="username" formControlName="userName" class="
                   border-0
                   px-3
                   py-3
@@ -183,27 +147,17 @@
                   ease-linear
                   transition-all
                   duration-150
-                "
-                placeholder="User Name"
-              />
-              <span *ngIf="userName.invalid && userName.touched"
-                >User Name k dc de trong</span
-              >
+                " placeholder="User Name" />
+              <!-- <span *ngIf="userName.invalid && userName.touched">User Name k dc de trong</span> -->
+              <span >User Name k dc de trong</span>
+
             </div>
 
             <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
                 Password
               </label>
-              <input
-                [(ngModel)]="user.password"
-                name="password"
-                type="password"
-                formControlName="password"
-                class="
+              <input [(ngModel)]="user.password" name="password" type="password" formControlName="password" class="
                   border-0
                   px-3
                   py-3
@@ -218,27 +172,17 @@
                   ease-linear
                   transition-all
                   duration-150
-                "
-              />
-              <span *ngIf="password.invalid && password.touched"
-                >Password k dc de trong</span
-              >
+                " />
+              <!-- <span *ngIf="password.invalid && password.touched">Password k dc de trong</span> -->
+              <span >Password k dc de trong</span>
+
             </div>
 
             <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
                 Email
               </label>
-              <input
-                [(ngModel)]="user.email"
-                name="email"
-                #Email
-                type="email"
-                formControlName="email"
-                class="
+              <input [(ngModel)]="user.email" name="email" #Email type="email" formControlName="email" class="
                   border-0
                   px-3
                   py-3
@@ -253,27 +197,17 @@
                   ease-linear
                   transition-all
                   duration-150
-                "
-                placeholder="Email"
-              />
-              <span *ngIf="email.invalid && email.touched"
-                >Email k dc de trong</span
-              >
+                " placeholder="Email" />
+              <!-- <span *ngIf="email.invalid && email.touched">Email k dc de trong</span> -->
+              <span *>Email k dc de trong</span>
+
             </div>
 
             <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
                 SDT
               </label>
-              <input
-                [(ngModel)]="user.phone"
-                name="phone"
-                type="number"
-                formControlName="phone"
-                class="
+              <input [(ngModel)]="user.phone" name="phone" type="number" formControlName="phone" class="
                   border-0
                   px-3
                   py-3
@@ -288,26 +222,17 @@
                   ease-linear
                   transition-all
                   duration-150
-                "
-              />
-              <span *ngIf="phone.invalid && phone.touched"
-                >SDT k dc de trong</span
-              >
+                " />
+              <!-- <span *ngIf="phone.invalid && phone.touched">SDT k dc de trong</span> -->
+              <span >SDT k dc de trong</span>
+
             </div>
 
             <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
                 CMND/CCCD
               </label>
-              <input
-                [(ngModel)]="user.personalId"
-                name="personalId"
-                type="text"
-                formControlName="idPerson"
-                class="
+              <input [(ngModel)]="user.personalId" name="personalId" type="text" formControlName="idPerson" class="
                   border-0
                   px-3
                   py-3
@@ -322,34 +247,22 @@
                   ease-linear
                   transition-all
                   duration-150
-                "
-              />
-              <span *ngIf="idPerson.invalid && idPerson.touched"
-                >CMND/CCCD k dc de trong</span
-              >
+                " />
+              <!-- <span *ngIf="idPerson.invalid && idPerson.touched">CMND/CCCD k dc de trong</span> -->
+              <span >CMND/CCCD k dc de trong</span>
+
             </div>
 
             <div class="relative w-full mb-3">
-              <label
-                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                htmlFor="grid-password"
-              >
+              <label class="block uppercase text-blueGray-600 text-xs font-bold mb-2" htmlFor="grid-password">
                 Nhập mã OTP:
-                <ng-container
-                  *ngIf="checkMail; then thenTemplate; else elseTemplate"
-                ></ng-container>
+                <ng-container *ngIf="checkMail; then thenTemplate; else elseTemplate"></ng-container>
                 <ng-template #thenTemplate>
-                  <button (click)="checkOTP()">Xác nhận</button></ng-template
-                >
-                <ng-template #elseTemplate
-                  ><button (click)="sendOTP()">Lấy mã OTP</button></ng-template
-                >
+                  <button (click)="checkOTP()">Xác nhận</button>
+                </ng-template>
+                <ng-template #elseTemplate><button (click)="sendOTP()">Lấy mã OTP</button></ng-template>
               </label>
-              <input
-                #userOTP
-                type="text"
-                formControlName="idPerson"
-                class="
+              <input #userOTP type="text" formControlName="idPerson" class="
                   border-0
                   px-3
                   py-3
@@ -364,19 +277,15 @@
                   ease-linear
                   transition-all
                   duration-150
-                "
-              />
-              <span *ngIf="otp.invalid && otp.touched"
-                >Mã OTP không được để trống</span
-              >
+                " />
+              <!-- <span *ngIf="otp.invalid && otp.touched">Mã OTP không được để trống</span>
+              <span *ngIf="otp.invalid && otp.touched">Mã OTP không được để trống</span> -->
+
             </div>
 
             <div>
               <label class="inline-flex items-center cursor-pointer">
-                <input
-                  id="customCheckLogin"
-                  type="checkbox"
-                  class="
+                <input id="customCheckLogin" type="checkbox" class="
                     form-checkbox
                     border-0
                     text-blueGray-700
@@ -387,8 +296,7 @@
                     transition-all
                     duration-150
                     rounded
-                  "
-                />
+                  " />
                 <span class="ml-2 text-sm font-semibold text-blueGray-600">
                   I agree with the
                   <a href="javascript:void(0)" class="text-red-600">
@@ -398,13 +306,10 @@
               </label>
             </div>
 
-            <ng-container
-              *ngIf="successOTP; then thenOTP; else elseOTP"
-            ></ng-container>
-            <ng-template #thenOTP
-              ><div class="text-center mt-6">
-                <button
-                  class="
+            <ng-container *ngIf="successOTP; then thenOTP; else elseOTP"></ng-container>
+            <ng-template #thenOTP>
+              <div class="text-center mt-6">
+                <button class="
                     bg-blueGray-800
                     text-white
                     active:bg-blueGray-600
@@ -424,10 +329,7 @@
                     ease-linear
                     transition-all
                     duration-150
-                  "
-                  type="button"
-                  (click)="register()"
-                >
+                  " type="button" (click)="register()">
                   Create Account
                 </button>
               </div>

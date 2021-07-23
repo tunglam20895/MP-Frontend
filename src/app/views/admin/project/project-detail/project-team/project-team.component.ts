@@ -113,7 +113,7 @@ export class ProjectTeamComponent implements OnInit {
   getUserTransfer() {
     this.id = JSON.parse(this.idProjectTranfer.nativeElement.value)
     console.log(this.newUserTranfer);
-    this._service.letTransferUerProject(this.newUserTranfer, this.id).subscribe(data => {
+    this._service.letTransferUerProject(this.userTranfer.nativeElement.value, this.id).subscribe(data => {
       Swal.fire({
         position: 'center',
         icon: 'success',
