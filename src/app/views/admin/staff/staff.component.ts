@@ -26,4 +26,9 @@ export class StaffComponent implements OnInit {
     })
   }
 
+  getUser(user) {
+    console.log(user);
+    localStorage.setItem('updateUser', JSON.stringify(user));
+  }
+
 }

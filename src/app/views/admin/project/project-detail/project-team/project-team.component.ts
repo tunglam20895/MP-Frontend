@@ -106,13 +106,14 @@ export class ProjectTeamComponent implements OnInit {
   }
 
   onClickTransfer(newUser: any) {
-    console.log(newUser);
-    this.newUserTranfer = newUser;
+    console.log(this.userTranfer.nativeElement.value);
+
   }
 
   getUserTransfer() {
     this.id = JSON.parse(this.idProjectTranfer.nativeElement.value)
     console.log(this.newUserTranfer);
+
     this._service.letTransferUerProject(this.userTranfer.nativeElement.value, this.id).subscribe(data => {
       Swal.fire({
         position: 'center',

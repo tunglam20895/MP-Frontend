@@ -61,6 +61,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { StaffComponent } from './views/admin/staff/staff.component';
 import { ProjectComponent } from './views/admin/project/project.component';
+import { StaffUpdateComponent } from './views/admin/staff/staff-update/staff-update.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +104,7 @@ import { ProjectComponent } from './views/admin/project/project.component';
     LandingComponent,
     StaffComponent,
     ProfileComponent,
+    StaffUpdateComponent
 
   ],
   imports: [

@@ -97,4 +97,18 @@ export class APIService {
     return this._http.post("http://localhost:8081/project/transfer-user/" + id, userTrans, { headers });
   }
 
+  public getDivisions() {
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
+    return this._http.get("http://localhost:8081/member/get-divisions", { headers });
+  }
+
+  public updateUser(user: any, id: number): Observable<any> {
+
+    const headers = new HttpHeaders({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password)
+    });
+    return this._http.post("http://localhost:8081/member/save-user/" + id, user, { headers });
+  }
 }
