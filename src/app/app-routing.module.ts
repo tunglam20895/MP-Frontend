@@ -1,3 +1,4 @@
+import { ErorPageComponent } from './views/eror-page/eror-page.component';
 import { UpdateProfileMemberComponent } from './views/member/update-profile-member/update-profile-member.component';
 import { ProfileMemberComponent } from './views/member/profile-member/profile-member.component';
 import { MemberComponent } from './views/member/member.component';
@@ -78,6 +79,7 @@ const routes: Routes = [
   { path: "profile", component: ProfileComponent },
   { path: "landing", component: LandingComponent },
   { path: "", component: IndexComponent },
+  { path: "404", component: ErorPageComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },
 ];
 
