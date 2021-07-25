@@ -1,3 +1,4 @@
+import { PermissionComponent } from './views/admin/permission/permission.component';
 import { ProfileMemberComponent } from './views/member/profile-member/profile-member.component';
 import { HeaderMemberComponent } from './components/headers/header-stats/header-member/header-member.component';
 import { MemberComponent } from './views/member/member.component';
@@ -103,6 +104,7 @@ import { StaffUpdateComponent } from './views/admin/staff/staff-update/staff-upd
     IndexComponent,
     LandingComponent,
     StaffComponent,
+    PermissionComponent,
     ProfileComponent,
     StaffUpdateComponent
 

@@ -1,3 +1,4 @@
+import { MemberPermissionComponent } from './views/member/member-permission/member-permission.component';
 import { ErorPageComponent } from './views/eror-page/eror-page.component';
 import { UpdateProfileMemberComponent } from './views/member/update-profile-member/update-profile-member.component';
 import { ProfileMemberComponent } from './views/member/profile-member/profile-member.component';
@@ -71,6 +72,7 @@ const routes: Routes = [
     children: [
       { path: "profile", component: ProfileMemberComponent },
       { path: "update", component: UpdateProfileMemberComponent },
+      { path: "permission", component: MemberPermissionComponent },
       { path: "", redirectTo: "profile", pathMatch: "full" },
     ],
   },
