@@ -62,6 +62,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { StaffComponent } from './views/admin/staff/staff.component';
 import { ProjectComponent } from './views/admin/project/project.component';
 import { StaffUpdateComponent } from './views/admin/staff/staff-update/staff-update.component';
+import { UpdateProfileMemberComponent } from './views/member/update-profile-member/update-profile-member.component';
 
 @NgModule({
   declarations: [
@@ -104,7 +105,8 @@ import { StaffUpdateComponent } from './views/admin/staff/staff-update/staff-upd
     LandingComponent,
     StaffComponent,
     ProfileComponent,
-    StaffUpdateComponent
+    StaffUpdateComponent,
+    UpdateProfileMemberComponent
 
   ],
   imports: [

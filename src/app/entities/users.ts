@@ -18,6 +18,6 @@ export class Users {
     status: number;
     dayOffLastYear: any;
     dateCreated: any;
-    birthDay: any;
+
 
 }

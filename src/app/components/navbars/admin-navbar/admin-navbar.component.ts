@@ -6,10 +6,10 @@ import { Component, OnInit } from "@angular/core";
 })
 export class AdminNavbarComponent implements OnInit {
 
-  // user: any;
+  user: any;
 
-  // constructor(
-  // ) { this.user = JSON.parse(localStorage.getItem('currentUser') || '') }
+  constructor(
+  ) { this.user = JSON.parse(localStorage.getItem('currentUser') || '') }
 
   ngOnInit(): void { }
 }
