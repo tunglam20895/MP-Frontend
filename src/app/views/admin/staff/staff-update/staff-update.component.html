@@ -224,7 +224,7 @@
                       >
                         <option
                           *ngFor="let di of divi"
-                          [selected]="user.divisions"
+                          [selected]="user.divisions.name"
                           value="{{ di.id }}"
                         >
                           {{ di.name }}
