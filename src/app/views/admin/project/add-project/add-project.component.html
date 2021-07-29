@@ -1,0 +1,88 @@
+<form
+  action=""
+  class="form bg-white p-6 my-10 relative"
+  #addForm="ngForm"
+  (ngSubmit)="addPro()"
+>
+  <div
+    class="
+      icon
+      bg-blue-600
+      text-white
+      w-6
+      h-6
+      absolute
+      flex
+      items-center
+      justify-center
+      p-5
+    "
+    style="left: -40px"
+  >
+    <i class="fal fa-phone-volume fa-fw text-2xl transform -rotate-45"></i>
+  </div>
+  <h3 class="text-2xl text-gray-900 font-semibold">CREATE NEW PROJECT</h3>
+  <p class="text-gray-600">Vui lòng điền đầy đủ thông tin</p>
+  <div class="flex space-x-5 mt-3">
+    <input
+      [(ngModel)]="newPro.name"
+      type="text"
+      name="name"
+      id=""
+      placeholder="Project Name"
+      class="border p-2 w-1/2"
+      required
+    />
+    <input
+      [(ngModel)]="newPro.dateEnd"
+      type="date"
+      name="dateEnd"
+      id=""
+      placeholder="Date Finished"
+      class="border p-2 w-1/2"
+    />
+  </div>
+  <div class="flex space-x-5 mt-3">
+    <select
+      [(ngModel)]="newPro.username"
+      type="text"
+      name="username"
+      id=""
+      placeholder="Project Name"
+      class="border w-1/2 h-1/3"
+    >
+      <option *ngFor="let pm of pm" value="{{ pm }}">{{ pm }}</option>
+    </select>
+    <textarea
+      [(ngModel)]="newPro.descriptions"
+      cols="5"
+      rows="3"
+      name="descriptions"
+      id=""
+      placeholder="Description"
+      class="border p-2 w-1/2"
+    ></textarea>
+  </div>
+  <!-- <textarea
+    name=""
+    id=""
+    cols="10"
+    rows="3"
+    placeholder="Description"
+    class="border p-2 mt-3 w-full"
+  ></textarea> -->
+
+  <input
+    type="submit"
+    value="ADD"
+    class="
+      w-full
+      mt-6
+      bg-blue-600
+      hover:bg-blue-500
+      text-white
+      font-semibold
+      p-3
+    "
+  />
+</form>

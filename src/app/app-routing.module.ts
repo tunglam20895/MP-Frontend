@@ -30,6 +30,7 @@ import { IndexComponent } from "./views/index/index.component";
 import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
 import { PermissionComponent } from './views/admin/permission/permission.component';
+import { AddProjectComponent } from './views/admin/project/add-project/add-project.component';
 
 const routes: Routes = [
   // admin views
@@ -42,6 +43,7 @@ const routes: Routes = [
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },
       { path: "project", component: ProjectComponent },
+      { path: "project/add", component: AddProjectComponent },
       { path: "project/detail", component: ProjectDetailComponent },
       { path: "staff", component: StaffComponent },
       { path: "staff/update", component: StaffUpdateComponent },

@@ -36,4 +36,7 @@ export class ProjectComponent implements OnInit {
     localStorage.setItem('Project', JSON.stringify(project));
   }
 
+  add() {
+    this.router.navigate(['admin/project/add'])
+  }
 }

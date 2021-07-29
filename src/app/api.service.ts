@@ -98,6 +98,18 @@ export class APIService {
     return this._http.post(this.API + "project/transfer-user/" + id, userTrans, { headers });
   }
 
+  public getListPM() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
+    return this._http.get(this.API + "project/PM", { headers });
+  }
+
+  public addProject(project: any) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
+    return this._http.post(this.API + "project/add-project", project, { headers });
+  }
+
   public getDivisions() {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
     return this._http.get(this.API + "member/get-divisions", { headers });
