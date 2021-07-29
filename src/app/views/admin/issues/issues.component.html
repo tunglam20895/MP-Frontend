@@ -58,6 +58,10 @@
                       class="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">
                       Category
                     </th>
+                    <th scope="col"
+                      class="px-5 py-3 bg-white  border-b border-gray-200 text-gray-800  text-left text-sm uppercase font-normal">
+                      Action
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
@@ -117,62 +121,11 @@
                       </p>
 
                     </td>
-                  </tr>
-                  <tr>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      <div class="flex items-center">
-                        <label class="flex justify-start items-start">
-                          <div
-                            class="bg-white border-2 rounded border-gray-400 w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500">
-                            <input type="checkbox" class="opacity-0 absolute">
-                            <svg class="fill-current hidden w-4 h-4 text-green-500 pointer-events-none"
-                              viewBox="0 0 20 20">
-                              <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
-                            </svg>
-                          </div>
-                        </label>
-                        <style>
-                          input:checked+svg {
-                            display: block;
-                          }
-                        </style>
-                      </div>
-                    </td>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      <p class="text-gray-900 whitespace-no-wrap">
-                        Admin
-                      </p>
-                    </td>
-
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
-                        <span aria-hidden="true" class="absolute inset-0 bg-green-200 opacity-50 rounded-full">
-                        </span>
-                        <span class="relative">
-                          active
-                        </span>
-                      </span>
-                    </td>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      <p class="text-gray-900 whitespace-no-wrap">
-                        Abc
-                      </p>
-                    </td>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      <p class="text-gray-900 whitespace-no-wrap">
-                        Abc
-                      </p>
-                    </td>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      <p class="text-gray-900 whitespace-no-wrap">
-                        12/09/2020
-                      </p>
-                    </td>
-                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
-                      <p class="text-gray-900 whitespace-no-wrap">
-                        Admin
-                      </p>
-
+                    <td class="px-5 py-5 border-b border-gray-200  text-sm">
+                      <button
+                        class="bg-blue-500 rounded-lg font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600 mr-6">
+                        Detail
+                      </button>
                     </td>
                   </tr>
                   <tr>
@@ -230,6 +183,13 @@
                         Admin
                       </p>
 
+
+                    </td>
+                    <td class="px-5 py-5 border-b border-gray-200  text-sm">
+                      <button
+                        class="bg-blue-500 rounded-lg font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600 mr-6">
+                        Detail
+                      </button>
                     </td>
                   </tr>
                   <tr>
@@ -287,6 +247,75 @@
                         Admin
                       </p>
 
+                    </td>
+                    <td class="px-5 py-5 border-b border-gray-200  text-sm">
+                      <button
+                        class="bg-blue-500 rounded-lg font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600 mr-6">
+                        Detail
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <div class="flex items-center">
+                        <label class="flex justify-start items-start">
+                          <div
+                            class="bg-white border-2 rounded border-gray-400 w-6 h-6 flex flex-shrink-0 justify-center items-center mr-2 focus-within:border-blue-500">
+                            <input type="checkbox" class="opacity-0 absolute">
+                            <svg class="fill-current hidden w-4 h-4 text-green-500 pointer-events-none"
+                              viewBox="0 0 20 20">
+                              <path d="M0 11l2-2 5 5L18 3l2 2L7 18z" />
+                            </svg>
+                          </div>
+                        </label>
+                        <style>
+                          input:checked+svg {
+                            display: block;
+                          }
+                        </style>
+                      </div>
+                    </td>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <p class="text-gray-900 whitespace-no-wrap">
+                        Admin
+                      </p>
+                    </td>
+
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <span class="relative inline-block px-3 py-1 font-semibold text-green-900 leading-tight">
+                        <span aria-hidden="true" class="absolute inset-0 bg-green-200 opacity-50 rounded-full">
+                        </span>
+                        <span class="relative">
+                          active
+                        </span>
+                      </span>
+                    </td>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <p class="text-gray-900 whitespace-no-wrap">
+                        Abc
+                      </p>
+                    </td>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <p class="text-gray-900 whitespace-no-wrap">
+                        Abc
+                      </p>
+                    </td>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <p class="text-gray-900 whitespace-no-wrap">
+                        12/09/2020
+                      </p>
+                    </td>
+                    <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                      <p class="text-gray-900 whitespace-no-wrap">
+                        Admin
+                      </p>
+
+                    </td>
+                    <td class="px-5 py-5 border-b border-gray-200  text-sm">
+                      <button 
+                        class="bg-blue-500 rounded-lg font-bold text-white text-center px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600 mr-6">
+                        Detail
+                      </button>
                     </td>
                   </tr>
                 </tbody>
@@ -332,8 +361,11 @@
             </div>
           </div>
         </div>
+        <button class="bg-blue-500 mb-5 w-32 rounded-full font-bold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-blue-600 mr-6">abc</button>
       </div>
 
     </div>
+    
   </div>
+  
 </div>

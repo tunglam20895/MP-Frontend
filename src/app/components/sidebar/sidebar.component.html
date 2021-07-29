@@ -12,7 +12,7 @@
     <a [routerLink]="['/']"
       class="md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0">
       <span class="block sm:hidden"> Tailwind Angular </span>
-      <span class="hidden sm:block"> Notus Angular </span>
+      <div class="hidden sm:block "><img class=" " src="assets/img/enterprise.png" alt=""></div>
     </a>
     <!-- User -->
     <ul class="md:hidden items-center flex flex-wrap list-none">
@@ -158,7 +158,7 @@
 
       <ul class="md:flex-col md:min-w-full flex flex-col list-none md:mb-4">
         <li class="items-center">
-          <a [routerLink]="['/member/issues']" class="text-xs uppercase py-3 font-bold block" routerLinkActive
+          <a  class="text-xs uppercase py-3 font-bold block" routerLinkActive
             #memberissues="routerLinkActive" [ngClass]="
               memberissues.isActive
                 ? 'text-red-600 hover:text-red-700'

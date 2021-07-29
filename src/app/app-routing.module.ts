@@ -1,3 +1,5 @@
+import { ProjectIssuesDetailComponent } from './views/admin/project/project-detail/project-res/project-issues-detail/project-issues-detail.component';
+import { IssuesDetailComponent } from './views/admin/issues/issues-detail/issues-detail.component';
 import { MemberPermissionComponent } from './views/member/member-permission/member-permission.component';
 import { ErorPageComponent } from './views/eror-page/eror-page.component';
 import { UpdateProfileMemberComponent } from './views/member/update-profile-member/update-profile-member.component';
@@ -45,9 +47,11 @@ const routes: Routes = [
       { path: "maps", component: MapsComponent },
       { path: "project", component: ProjectComponent },
       { path: "project/detail", component: ProjectDetailComponent },
+      { path: "project/issues-detail", component: ProjectIssuesDetailComponent },
       { path: "staff", component: StaffComponent },
       { path: "staff/update", component: StaffUpdateComponent },
       { path: "issues", component: IssuesComponent },
+      { path: "issues/detail", component: IssuesDetailComponent },
       { path: "report", component: ReportComponent },
       { path: "permission", component: PermissionComponent },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
