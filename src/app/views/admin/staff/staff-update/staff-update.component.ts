@@ -2,7 +2,6 @@ import { Component, OnInit, NgModule, ViewChild, ElementRef } from '@angular/cor
 import { Users } from './../../../../entities/users';
 import { FormsModule, NgForm } from '@angular/forms';
 import { APIService } from 'src/app/api.service';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -81,7 +80,7 @@ export class StaffUpdateComponent implements OnInit {
       Swal.fire({
         position: 'center',
         icon: 'success',
-        title: 'Update thành công thành công',
+        title: 'Update thành công',
         showConfirmButton: false,
         timer: 1500
       })
