@@ -63,6 +63,7 @@ import { StaffComponent } from './views/admin/staff/staff.component';
 import { ProjectComponent } from './views/admin/project/project.component';
 import { StaffUpdateComponent } from './views/admin/staff/staff-update/staff-update.component';
 import { UpdateProfileMemberComponent } from './views/member/update-profile-member/update-profile-member.component';
+import { IssuesComponent } from './views/admin/issues/issues.component';
 
 @NgModule({
   declarations: [
@@ -106,7 +107,8 @@ import { UpdateProfileMemberComponent } from './views/member/update-profile-memb
     StaffComponent,
     ProfileComponent,
     StaffUpdateComponent,
-    UpdateProfileMemberComponent
+    UpdateProfileMemberComponent,
+    IssuesComponent
 
   ],
   imports: [

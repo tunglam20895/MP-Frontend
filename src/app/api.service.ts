@@ -12,6 +12,7 @@ export class APIService {
   pro: any;
   id: number;
 
+  API = "http://localhost:8081/";
   constructor(private _http: HttpClient) {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
 
@@ -22,30 +23,30 @@ export class APIService {
     // const password = 'admin';
     console.log(this.currentUser.username);
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
-    return this._http.get("http://localhost:8081/public/authorization", { headers });
+    return this._http.get(this.API + "public/authorization", { headers });
   }
 
   public login(user: Users): Observable<any> {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(user.username + ':' + user.password) });
-    return this._http.get("http://localhost:8081/public/login", { headers })
+    return this._http.get(this.API + "public/login", { headers })
   }
 
   public createAccount(user: Users) {
-    return this._http.post("http://localhost:8081/public/register", user);
+    return this._http.post(this.API + "public/register", user);
   }
 
   public sendOTP(email: string) {
-    return this._http.post("http://localhost:8081/public/sendOTP", email);
+    return this._http.post(this.API + "public/sendOTP", email);
   }
 
   public resetPassword(username: string, email: string) {
-    return this._http.post("http://localhost:8081/public/reset-password", { username: username, email: email });
+    return this._http.post(this.API + "public/reset-password", { username: username, email: email });
   }
 
   public getListProject() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
-    return this._http.get("http://localhost:8081/project/list/" + this.currentUser.username, { headers });
+    return this._http.get(this.API + "project/list/" + this.currentUser.username, { headers });
   }
 
   public getListUserProject() {
@@ -53,39 +54,39 @@ export class APIService {
     this.id = this.pro.id;
     console.log(this.id);
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
-    return this._http.get("http://localhost:8081/project/project-user/" + this.id, { headers });
+    return this._http.get(this.API + "project/project-user/" + this.id, { headers });
   }
 
   public getAut() {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
-    return this._http.get("http://localhost:8081/member/getAuthor", { headers });
+    return this._http.get(this.API + "member/getAuthor", { headers });
   }
 
   public DeleteUser() {
     this.userProjectId = JSON.parse(localStorage.getItem('userProject') || '');
     console.log(this.id);
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
-    return this._http.delete("http://localhost:8081/project/delete-user-project/" + this.userProjectId, { headers });
+    return this._http.delete(this.API + "project/delete-user-project/" + this.userProjectId, { headers });
   }
 
   public addUser(username: string): Observable<any> {
     this.pro = JSON.parse(localStorage.getItem('Project') || '');
     this.id = this.pro.id;
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
-    return this._http.post("http://localhost:8081/project/add-user/" + this.id, username, { headers });
+    return this._http.post(this.API + "project/add-user/" + this.id, username, { headers });
   }
 
   public getListMembers() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
-    return this._http.get("http://localhost:8081/member/get-member", { headers });
+    return this._http.get(this.API + "member/get-member", { headers });
   }
 
   public getListTransferProject() {
     this.pro = JSON.parse(localStorage.getItem('Project') || '');
     this.id = this.pro.id;
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
-    return this._http.get("http://localhost:8081/project/get-transfer-project/" + this.id, { headers });
+    return this._http.get(this.API + "project/get-transfer-project/" + this.id, { headers });
   }
 
   public letTransferUerProject(userTrans: any, id: number): Observable<any> {
@@ -94,12 +95,12 @@ export class APIService {
       'Content-Type': 'application/json',
       Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password)
     });
-    return this._http.post("http://localhost:8081/project/transfer-user/" + id, userTrans, { headers });
+    return this._http.post(this.API + "project/transfer-user/" + id, userTrans, { headers });
   }
 
   public getDivisions() {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
-    return this._http.get("http://localhost:8081/member/get-divisions", { headers });
+    return this._http.get(this.API + "member/get-divisions", { headers });
   }
 
   public updateUser(user: any, id: number): Observable<any> {
@@ -109,18 +110,26 @@ export class APIService {
       'Content-Type': 'application/json',
       Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password)
     });
-    return this._http.post("http://localhost:8081/member/save-user/" + id, user, { headers });
+    return this._http.post(this.API + "member/save-user/" + id, user, { headers });
   }
 
   //Profile
   public getProfile() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
-    return this._http.get("http://localhost:8081/profile/get-info/" + this.currentUser.username, { headers });
+    return this._http.get(this.API + "profile/get-info/" + this.currentUser.username, { headers });
   }
+
 
   public updateProfile(user: any) {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
-    return this._http.post("http://localhost:8081/profile/update-profile", user, { headers });
+    return this._http.post(this.API + "profile/update-profile", user, { headers });
+  }
+
+  public getIssues() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
+    return this._http.get(this.API + "issue/issues/" + this.currentUser.username, { headers });
   }
 }
+
