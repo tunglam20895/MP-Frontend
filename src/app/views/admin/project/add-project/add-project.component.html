@@ -1,9 +1,4 @@
-<form
-  action=""
-  class="form bg-white p-6 my-10 relative"
-  #addForm="ngForm"
-  (ngSubmit)="addPro()"
->
+<form action="" class="form bg-white p-6 my-10 relative" #addForm="ngForm">
   <div
     class="
       icon
@@ -72,9 +67,8 @@
     class="border p-2 mt-3 w-full"
   ></textarea> -->
 
-  <input
-    type="submit"
-    value="ADD"
+  <button
+    type="button"
     class="
       w-full
       mt-6
@@ -84,5 +78,8 @@
       font-semibold
       p-3
     "
-  />
+    (click)="addPro()"
+  >
+    ADD
+  </button>
 </form>
