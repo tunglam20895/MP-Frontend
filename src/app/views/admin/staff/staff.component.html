@@ -1,7 +1,6 @@
 <div class="flex flex-wrap">
   <div class="w-full px-4">
-    <div
-      class="
+    <div class="
         relative
         flex flex-col
         min-w-0
@@ -11,8 +10,7 @@
         mb-6
         shadow-lg
         rounded
-      "
-    >
+      ">
       <!-- <app-map-example></app-map-example> -->
 
       <div class="container mx-auto px-4 sm:px-8 max-w-3xl">
@@ -20,8 +18,7 @@
           <div class="flex flex-row mb-1 sm:mb-0 justify-between w-full">
             <h2 class="text-2xl leading-tight">Users</h2>
             <div class="text-end">
-              <form
-                class="
+              <form class="
                   flex flex-col
                   md:flex-row
                   w-3/4
@@ -31,13 +28,9 @@
                   space-y-3
                   md:space-y-0
                   justify-center
-                "
-              >
+                ">
                 <div class="relative">
-                  <input
-                    type="text"
-                    id='"form-subscribe-Filter'
-                    class="
+                  <input type="text" id='"form-subscribe-Filter' class="
                       rounded-lg
                       border-transparent
                       flex-1
@@ -55,12 +48,9 @@
                       focus:ring-2
                       focus:ring-purple-600
                       focus:border-transparent
-                    "
-                    placeholder="name"
-                  />
+                    " placeholder="name" />
                 </div>
-                <button
-                  class="
+                <button class="
                     flex-shrink-0
                     px-4
                     py-2
@@ -76,9 +66,7 @@
                     focus:ring-purple-500
                     focus:ring-offset-2
                     focus:ring-offset-purple-200
-                  "
-                  type="submit"
-                >
+                  " type="submit">
                   Filter
                 </button>
               </form>
@@ -89,9 +77,7 @@
               <table class="min-w-full leading-normal">
                 <thead>
                   <tr>
-                    <th
-                      scope="col"
-                      class="
+                    <th scope="col" class="
                         px-5
                         py-3
                         bg-white
@@ -99,13 +85,16 @@
                         text-gray-800 text-left text-sm
                         uppercase
                         font-normal
-                      "
-                    >
-                      User
+                      ">
+                      
+                      <div class="inline-block">
+                        <span>User</span>
+                        <a href="">
+                          <img class="w-3 mx-auto " src="assets/img/filter.png" alt="">
+                        </a>
+                      </div>
                     </th>
-                    <th
-                      scope="col"
-                      class="
+                    <th scope="col" class="
                         px-5
                         py-3
                         bg-white
@@ -113,13 +102,16 @@
                         text-gray-800 text-left text-sm
                         uppercase
                         font-normal
-                      "
-                    >
-                      Role
+                      ">
+                     
+                      <div class="inline-block">
+                        <span>Role</span>
+                        <a href="">
+                          <img class="w-3 mx-auto " src="assets/img/filter.png" alt="">
+                        </a>
+                      </div>
                     </th>
-                    <th
-                      scope="col"
-                      class="
+                    <th scope="col" class="
                         px-5
                         py-3
                         bg-white
@@ -127,13 +119,16 @@
                         text-gray-800 text-left text-sm
                         uppercase
                         font-normal
-                      "
-                    >
-                      Created at
+                      ">
+                      
+                      <div class="inline-block">
+                        <span>Created at</span>
+                        <a href="">
+                          <img class="w-3 mx-auto " src="assets/img/filter.png" alt="">
+                        </a>
+                      </div>
                     </th>
-                    <th
-                      scope="col"
-                      class="
+                    <th scope="col" class="
                         px-5
                         py-3
                         bg-white
@@ -141,13 +136,16 @@
                         text-gray-800 text-left text-sm
                         uppercase
                         font-normal
-                      "
-                    >
-                      status
+                      ">
+                      
+                      <div class="inline-block">
+                        <span>status</span>
+                        <a href="">
+                          <img class="w-3 mx-auto " src="assets/img/filter.png" alt="">
+                        </a>
+                      </div>
                     </th>
-                    <th
-                      scope="col"
-                      class="
+                    <th scope="col" class="
                         px-5
                         py-3
                         bg-white
@@ -155,15 +153,13 @@
                         text-gray-800 text-left text-sm
                         uppercase
                         font-normal
-                      "
-                    >
+                      ">
                       Action
                     </th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr
-                    *ngFor="
+                  <tr *ngFor="
                       let m of members
                         | paginate
                           : {
@@ -171,31 +167,24 @@
                               currentPage: page,
                               totalItems: totalLength
                             }
-                    "
-                  >
-                    <td
-                      class="
+                    ">
+                    <td class="
                         px-5
                         py-5
                         border-b border-gray-200
                         bg-white
                         text-sm
-                      "
-                    >
+                      ">
                       <div class="flex items-center">
                         <div class="flex-shrink-0">
                           <a href="#" class="block relative">
-                            <img
-                              alt="profil"
-                              src="assets/img/cat.jpg"
-                              class="
+                            <img alt="profil" src="assets/img/cat.jpg" class="
                                 mx-auto
                                 object-cover
                                 rounded-full
                                 h-10
                                 w-10
-                              "
-                            />
+                              " />
                           </a>
                         </div>
                         <div class="ml-3">
@@ -205,46 +194,37 @@
                         </div>
                       </div>
                     </td>
-                    <td
-                      class="
+                    <td class="
                         px-5
                         py-5
                         border-b border-gray-200
                         bg-white
                         text-sm
-                      "
-                    >
+                      ">
                       <p class="text-gray-900 whitespace-no-wrap">
                         {{ m.role }}
                       </p>
                     </td>
-                    <td
-                      class="
+                    <td class="
                         px-5
                         py-5
                         border-b border-gray-200
                         bg-white
                         text-sm
-                      "
-                    >
+                      ">
                       <p class="text-gray-900 whitespace-no-wrap">
                         {{ m.dateCreated | date: "fullDate" }}
                       </p>
                     </td>
-                    <td
-                      class="
+                    <td class="
                         px-5
                         py-5
                         border-b border-gray-200
                         bg-white
                         text-sm
-                      "
-                    >
-                      <ng-container
-                        *ngIf="m.userStatus == 'ACTIVE'; else elseTemplate"
-                      >
-                        <span
-                          class="
+                      ">
+                      <ng-container *ngIf="m.userStatus == 'ACTIVE'; else elseTemplate">
+                        <span class="
                             relative
                             inline-block
                             px-3
@@ -252,28 +232,21 @@
                             font-semibold
                             text-green-900
                             leading-tight
-                          "
-                        >
-                          <span
-                            aria-hidden="true"
-                            class="
+                          ">
+                          <span aria-hidden="true" class="
                               absolute
                               inset-0
                               bg-green-200
                               opacity-50
                               rounded-full
-                            "
-                          >
+                            ">
                           </span>
                           <span class="relative"> {{ m.userStatus }} </span>
                         </span>
                       </ng-container>
                       <ng-template #elseTemplate>
-                        <ng-container
-                          *ngIf="m.userStatus == 'PENDING'; else elseTemplate1"
-                        >
-                          <span
-                            class="
+                        <ng-container *ngIf="m.userStatus == 'PENDING'; else elseTemplate1">
+                          <span class="
                               relative
                               inline-block
                               px-3
@@ -281,25 +254,20 @@
                               font-semibold
                               text-green-900
                               leading-tight
-                            "
-                          >
-                            <span
-                              aria-hidden="true"
-                              class="
+                            ">
+                            <span aria-hidden="true" class="
                                 absolute
                                 inset-0
                                 bg-yellow-200
                                 opacity-50
                                 rounded-full
-                              "
-                            >
+                              ">
                             </span>
                             <span class="relative"> {{ m.userStatus }} </span>
                           </span>
                         </ng-container>
                         <ng-template #elseTemplate1>
-                          <span
-                            class="
+                          <span class="
                               relative
                               inline-block
                               px-3
@@ -307,78 +275,48 @@
                               font-semibold
                               text-green-900
                               leading-tight
-                            "
-                          >
-                            <span
-                              aria-hidden="true"
-                              class="
+                            ">
+                            <span aria-hidden="true" class="
                                 absolute
                                 inset-0
                                 bg-red-200
                                 opacity-50
                                 rounded-full
-                              "
-                            >
+                              ">
                             </span>
                             <span class="relative"> {{ m.userStatus }} </span>
                           </span>
                         </ng-template>
                       </ng-template>
                     </td>
-                    <td
-                      class="
+                    <td class="
                         px-5
                         py-5
                         border-b border-gray-200
                         bg-white
                         text-sm
-                      "
-                    >
+                      ">
                       <div class="flex item-center">
-                        <a
-                          [routerLink]="['/admin/staff/update']"
-                          class="
+                        <a [routerLink]="['/admin/staff/update']" class="
                             w-4
                             mr-2
                             transform
                             hover:text-purple-500 hover:scale-110
-                          "
-                          (click)="getUser(m)"
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
-                            />
+                          " (click)="getUser(m)">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
                           </svg>
                         </a>
-                        <div
-                          class="
+                        <div class="
                             w-4
                             mr-2
                             transform
                             hover:text-purple-500 hover:scale-110
-                          "
-                        >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                            />
+                          ">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                           </svg>
                         </div>
                       </div>
@@ -387,9 +325,7 @@
                 </tbody>
               </table>
             </div>
-            <pagination-controls
-              (pageChange)="page = $event"
-            ></pagination-controls>
+            <pagination-controls (pageChange)="page = $event"></pagination-controls>
           </div>
         </div>
       </div>
