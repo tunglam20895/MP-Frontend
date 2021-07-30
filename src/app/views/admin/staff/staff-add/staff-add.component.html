@@ -1,0 +1,127 @@
+<form action="" class="form bg-white p-6 my-10 relative" #addForm="ngForm">
+  <div
+    class="
+      icon
+      bg-blue-600
+      text-white
+      w-6
+      h-6
+      absolute
+      flex
+      items-center
+      justify-center
+      p-5
+    "
+    style="left: -40px"
+  >
+    <i class="fal fa-phone-volume fa-fw text-2xl transform -rotate-45"></i>
+  </div>
+  <h3 class="text-2xl text-gray-900 font-semibold">CREATE NEW MEMBER</h3>
+  <p class="text-gray-600">Vui lòng điền đầy đủ thông tin</p>
+  <div class="flex space-x-5 mt-3">
+    <input
+      [(ngModel)]="user.firstName"
+      type="text"
+      name="firstName"
+      id=""
+      placeholder="First name"
+      class="border p-2 w-1/2"
+      required
+    />
+    <input
+      [(ngModel)]="user.lastName"
+      type="text"
+      name="lastName"
+      id=""
+      placeholder="Last name"
+      class="border p-2 w-1/2"
+    />
+  </div>
+  <div class="flex space-x-5 mt-3">
+    <input
+      [(ngModel)]="user.username"
+      type="text"
+      name="username"
+      id=""
+      placeholder="Username"
+      class="border w-1/2"
+    />
+
+    <input
+      [(ngModel)]="user.password"
+      type="text"
+      name="password"
+      id=""
+      placeholder="Password"
+      class="border p-2 w-1/2"
+    />
+  </div>
+  <div class="flex space-x-5 mt-3">
+    <input
+      [(ngModel)]="user.email"
+      type="text"
+      name="emial"
+      id=""
+      placeholder="Email"
+      class="border p-2 w-1/2"
+      required
+    />
+    <input
+      [(ngModel)]="user.personalId"
+      type="text"
+      name="personalId"
+      id=""
+      placeholder="Personal ID"
+      class="border p-2 w-1/2"
+    />
+  </div>
+  <div class="flex space-x-5 mt-3">
+    <select
+      #divi
+      type="text"
+      name="phone"
+      id=""
+      placeholder="Phone"
+      class="border w-1/2"
+    >
+      <option *ngFor="let d of division" value="{{ d.id }}">
+        {{ d.name }}
+      </option>
+    </select>
+
+    <select
+      [(ngModel)]="user.role"
+      type="text"
+      name="role"
+      id=""
+      placeholder="Role"
+      class="border p-2 w-1/2"
+    >
+      <option *ngFor="let r of role" value="{{ r.role }}">{{ r.role }}</option>
+    </select>
+  </div>
+  <!-- <textarea
+    name=""
+    id=""
+    cols="10"
+    rows="3"
+    placeholder="Description"
+    class="border p-2 mt-3 w-full"
+  ></textarea> -->
+
+  <button
+    type="button"
+    class="
+      w-full
+      mt-6
+      bg-blue-600
+      hover:bg-blue-500
+      text-white
+      font-semibold
+      p-3
+    "
+    (click)="addMember()"
+  >
+    ADD
+  </button>
+</form>
