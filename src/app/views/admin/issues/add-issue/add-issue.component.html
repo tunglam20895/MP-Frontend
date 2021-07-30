@@ -1,0 +1,115 @@
+<form action="" class="form bg-white p-6 my-10 relative" #addForm="ngForm">
+  <div
+    class="
+      icon
+      bg-blue-600
+      text-white
+      w-6
+      h-6
+      absolute
+      flex
+      items-center
+      justify-center
+      p-5
+    "
+    style="left: -40px"
+  >
+    <i class="fal fa-phone-volume fa-fw text-2xl transform -rotate-45"></i>
+  </div>
+  <h3 class="text-2xl text-gray-900 font-semibold">CREATE NEW ISSUES</h3>
+  <p class="text-gray-600">Vui lòng điền đầy đủ thông tin</p>
+  <div class="flex space-x-5 mt-3">
+    <input
+      [(ngModel)]="issue.type"
+      type="text"
+      name="type"
+      id=""
+      placeholder="Issue type"
+      class="border p-2 w-1/2"
+      required
+    />
+    <input
+      [(ngModel)]="issue.title"
+      type="text"
+      name="title"
+      id=""
+      placeholder="Issue Title"
+      class="border p-2 w-1/2"
+    />
+  </div>
+  <div class="flex space-x-5 mt-3">
+    <select
+      [(ngModel)]="issue.priority"
+      type="text"
+      name="priority"
+      id=""
+      placeholder="Priority Level"
+      class="border w-1/2 h-1/3"
+    >
+      <!-- <option>Priority</option> -->
+      <option *ngFor="let p of priority" value="{{ p.name }}">
+        {{ p.name }}
+      </option>
+    </select>
+    <select
+      [(ngModel)]="issue.target"
+      type="text"
+      name="target"
+      id=""
+      placeholder="Priority Level"
+      class="border w-1/2 h-1/3"
+    >
+      <!-- <option selected>Target</option> -->
+      <option *ngFor="let t of target" value="{{ t.name }}">
+        {{ t.name }}
+      </option>
+    </select>
+    <select
+      [(ngModel)]="issue.project"
+      type="text"
+      name="project"
+      id=""
+      class="border w-1/2 h-1/3"
+    >
+      <!-- <option>Project</option> -->
+      <option *ngFor="let p of project" value="{{ p.id }}">
+        {{ p.name }}
+      </option>
+    </select>
+  </div>
+  <div class="flex space-x-5 mt-3">
+    <textarea
+      [(ngModel)]="issue.descriptions"
+      cols="5"
+      rows="3"
+      name="descriptions"
+      id=""
+      placeholder="Descriptions"
+      class="border p-2 w-full"
+    ></textarea>
+  </div>
+  <!-- <textarea
+    name=""
+    id=""
+    cols="10"
+    rows="3"
+    placeholder="Description"
+    class="border p-2 mt-3 w-full"
+  ></textarea> -->
+
+  <button
+    type="button"
+    class="
+      w-full
+      mt-6
+      bg-blue-600
+      hover:bg-blue-500
+      text-white
+      font-semibold
+      p-3
+    "
+    (click)="addIssue()"
+  >
+    ADD
+  </button>
+</form>

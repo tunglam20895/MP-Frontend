@@ -138,10 +138,23 @@ export class APIService {
     return this._http.post(this.API + "profile/update-profile", user, { headers });
   }
 
+  //issue
   public getIssues() {
     this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
     return this._http.get(this.API + "issue/issues/" + this.currentUser.username, { headers });
+  }
+
+  public getListProjectToAddIssue() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
+    return this._http.get(this.API + "issue/get-project/" + this.currentUser.username, { headers });
+  }
+
+  public createIssue(issue: any) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
+    return this._http.post(this.API + "issue/create-issue/" + this.currentUser.username, issue, { headers });
   }
 }
 

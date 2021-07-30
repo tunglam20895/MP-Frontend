@@ -31,6 +31,7 @@ import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
 import { PermissionComponent } from './views/admin/permission/permission.component';
 import { AddProjectComponent } from './views/admin/project/add-project/add-project.component';
+import { AddIssueComponent } from './views/admin/issues/add-issue/add-issue.component';
 
 const routes: Routes = [
   // admin views
@@ -47,6 +48,7 @@ const routes: Routes = [
       { path: "project/detail", component: ProjectDetailComponent },
       { path: "staff", component: StaffComponent },
       { path: "staff/update", component: StaffUpdateComponent },
+      { path: "issues/add", component: AddIssueComponent },
       { path: "issues", component: IssuesComponent },
       { path: "report", component: ReportComponent },
       { path: "permission", component: PermissionComponent },

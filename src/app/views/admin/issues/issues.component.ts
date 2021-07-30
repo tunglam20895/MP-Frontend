@@ -26,4 +26,10 @@ export class IssuesComponent implements OnInit {
     })
   }
 
+  addIssue(issueProject: any) {
+    this.router.navigate(['admin/issues/add'])
+    // console.log(this.issues);
+    // localStorage.setItem('issue', JSON.stringify(this.issues))
+  }
+
 }
