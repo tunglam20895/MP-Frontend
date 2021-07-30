@@ -1,3 +1,4 @@
+import { IssuesDetailComponent } from './views/admin/issues/issues-detail/issues-detail.component';
 import { ProfileMemberComponent } from './views/member/profile-member/profile-member.component';
 import { HeaderMemberComponent } from './components/headers/header-stats/header-member/header-member.component';
 import { MemberComponent } from './views/member/member.component';
@@ -112,6 +113,7 @@ import { StaffAddComponent } from './views/admin/staff/staff-add/staff-add.compo
     StaffUpdateComponent,
     UpdateProfileMemberComponent,
     IssuesComponent,
+    IssuesDetailComponent,
     AddProjectComponent,
     AddIssueComponent,
     StaffAddComponent

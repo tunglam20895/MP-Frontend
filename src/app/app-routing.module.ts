@@ -1,3 +1,5 @@
+import { MemberPermissionComponent } from './views/member/member-permission/member-permission.component';
+import { IssuesDetailComponent } from './views/admin/issues/issues-detail/issues-detail.component';
 import { UpdateProfileMemberComponent } from './views/member/update-profile-member/update-profile-member.component';
 import { ProfileMemberComponent } from './views/member/profile-member/profile-member.component';
 import { MemberComponent } from './views/member/member.component';
@@ -52,6 +54,7 @@ const routes: Routes = [
       { path: "staff/add", component: StaffAddComponent },
       { path: "issues/add", component: AddIssueComponent },
       { path: "issues", component: IssuesComponent },
+      { path: "issues/detail", component: IssuesDetailComponent },
       { path: "report", component: ReportComponent },
       { path: "permission", component: PermissionComponent },
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
@@ -76,6 +79,7 @@ const routes: Routes = [
     children: [
       { path: "profile", component: ProfileMemberComponent },
       { path: "update", component: UpdateProfileMemberComponent },
+      { path: "permission", component: MemberPermissionComponent },
       { path: "", redirectTo: "profile", pathMatch: "full" },
     ],
   },
