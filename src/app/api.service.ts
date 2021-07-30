@@ -122,7 +122,16 @@ export class APIService {
       'Content-Type': 'application/json',
       Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password)
     });
-    return this._http.post(this.API + "member/save-user/" + id, user, { headers });
+    return this._http.post(this.API + "member/save-member/" + id, user, { headers });
+  }
+
+  public createMember(user: any, id: number): Observable<any> {
+    const headers = new HttpHeaders({
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password)
+    });
+    return this._http.post(this.API + "member/create-member/" + id, user, { headers });
   }
 
   //Profile

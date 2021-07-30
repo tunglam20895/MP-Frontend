@@ -34,6 +34,7 @@ import { ProfileComponent } from "./views/profile/profile.component";
 import { PermissionComponent } from './views/admin/permission/permission.component';
 import { AddProjectComponent } from './views/admin/project/add-project/add-project.component';
 import { AddIssueComponent } from './views/admin/issues/add-issue/add-issue.component';
+import { StaffAddComponent } from './views/admin/staff/staff-add/staff-add.component';
 
 const routes: Routes = [
   // admin views
@@ -50,6 +51,7 @@ const routes: Routes = [
       { path: "project/detail", component: ProjectDetailComponent },
       { path: "staff", component: StaffComponent },
       { path: "staff/update", component: StaffUpdateComponent },
+      { path: "staff/add", component: StaffAddComponent },
       { path: "issues/add", component: AddIssueComponent },
       { path: "issues", component: IssuesComponent },
       { path: "issues/detail", component: IssuesDetailComponent },

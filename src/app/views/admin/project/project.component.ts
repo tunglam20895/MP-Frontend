@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { APIService } from 'src/app/api.service';
-import { TransferService } from '../../../transfer.service';
 
 @Component({
   selector: 'app-project',
@@ -16,7 +15,7 @@ export class ProjectComponent implements OnInit {
 
   @ViewChild('id') id!: ElementRef;
 
-  constructor(public _service: APIService, private router: Router, private transferService: TransferService) { }
+  constructor(public _service: APIService, private router: Router) { }
 
   ngOnInit() {
     this._service.getListProject().subscribe((data: any) => {
@@ -28,9 +27,7 @@ export class ProjectComponent implements OnInit {
     })
   }
 
-  getUserIdAndProjectId() {
-    this.transferService.setData(this.project)
-  }
+
   getPro(project: any) {
     console.log(project)
     localStorage.setItem('Project', JSON.stringify(project));

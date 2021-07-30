@@ -31,4 +31,8 @@ export class StaffComponent implements OnInit {
     localStorage.setItem('updateUser', JSON.stringify(user));
   }
 
+  addMember() {
+    this.router.navigate(['admin/staff/add'])
+  }
+
 }
