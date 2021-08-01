@@ -35,6 +35,8 @@ import { PermissionComponent } from './views/admin/permission/permission.compone
 import { AddProjectComponent } from './views/admin/project/add-project/add-project.component';
 import { AddIssueComponent } from './views/admin/issues/add-issue/add-issue.component';
 import { StaffAddComponent } from './views/admin/staff/staff-add/staff-add.component';
+import { UpdateIssueComponent } from './views/admin/issues/update-issue/update-issue.component';
+import { ErrorPageComponent } from './views/admin/error-page/error-page.component';
 
 const routes: Routes = [
   // admin views
@@ -53,10 +55,13 @@ const routes: Routes = [
       { path: "staff/update", component: StaffUpdateComponent },
       { path: "staff/add", component: StaffAddComponent },
       { path: "issues/add", component: AddIssueComponent },
+      { path: "issues/update", component: UpdateIssueComponent },
       { path: "issues", component: IssuesComponent },
       { path: "issues/detail", component: IssuesDetailComponent },
       { path: "report", component: ReportComponent },
       { path: "permission", component: PermissionComponent },
+      { path: "404", component: ErrorPageComponent },
+
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },

@@ -59,7 +59,7 @@ export class APIService {
 
   public getAut() {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
-    return this._http.get(this.API + "member/getAuthor", { headers });
+    return this._http.get(this.API + "profile/author", { headers });
   }
 
   public DeleteUser() {
@@ -165,5 +165,37 @@ export class APIService {
     const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
     return this._http.post(this.API + "issue/create-issue/" + this.currentUser.username, issue, { headers });
   }
+
+  public deleteIssue(id: number) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
+    return this._http.delete(this.API + "issue/delete-issue/" + id, { headers });
+  }
+
+  public getComment(id: number) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
+    return this._http.get(this.API + "issue/comments/" + id, { headers });
+  }
+
+  public getUpdater(id: number) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
+    return this._http.get(this.API + "issue/updaters/" + id, { headers });
+  }
+
+  public createComment(cmt: any) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
+    return this._http.post(this.API + "issue/create-comment", cmt, { headers });
+  }
+
+  public updateIssue(issue: any) {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser') || '');
+    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.currentUser.username + ':' + this.currentUser.password) });
+    return this._http.post(this.API + "issue/update-issue/" + this.currentUser.username, issue, { headers });
+  }
+
+
 }
 

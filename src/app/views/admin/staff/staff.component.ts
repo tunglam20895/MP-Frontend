@@ -19,10 +19,11 @@ export class StaffComponent implements OnInit {
   ngOnInit(
   ) {
     this._service.getListMembers().subscribe((data: any) => {
-      console.log("Hello bé: " + data);
+      console.log("Hello: " + data);
       this.members = data;
     }, err => {
       console.log(err);
+      this.router.navigate(['admin/404'])
     })
   }
 
@@ -35,4 +36,10 @@ export class StaffComponent implements OnInit {
     this.router.navigate(['admin/staff/add'])
   }
 
+  key = '';
+  reserve: boolean = true;
+  sort(key) {
+    this.key = key;
+    this.reserve = !this.reserve;
+  }
 }

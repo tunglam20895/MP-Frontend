@@ -23,6 +23,7 @@ export class ProjectComponent implements OnInit {
       this.totalLength = data.length;
     }, err => {
       console.log("Lỗi truy cập" + err)
+      this.router.navigate(['admin/404'])
 
     })
   }

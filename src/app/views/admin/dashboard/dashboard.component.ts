@@ -8,7 +8,7 @@ import { APIService } from "src/app/api.service";
 })
 export class DashboardComponent implements OnInit {
   constructor(
-    // public _service: APIService, private router: Router
+    public _service: APIService, private router: Router
   ) { }
 
   ngOnInit(

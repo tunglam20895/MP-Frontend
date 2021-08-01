@@ -6,6 +6,7 @@ import { ForgotPasswordComponent } from './views/auth/forgot-password/forgot-pas
 import { ProjectModule } from './views/admin/project/project.module';
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -68,6 +69,10 @@ import { IssuesComponent } from './views/admin/issues/issues.component';
 import { AddProjectComponent } from './views/admin/project/add-project/add-project.component';
 import { AddIssueComponent } from './views/admin/issues/add-issue/add-issue.component';
 import { StaffAddComponent } from './views/admin/staff/staff-add/staff-add.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { UpdateIssueComponent } from './views/admin/issues/update-issue/update-issue.component';
+
+
 
 @NgModule({
   declarations: [
@@ -116,7 +121,8 @@ import { StaffAddComponent } from './views/admin/staff/staff-add/staff-add.compo
     IssuesDetailComponent,
     AddProjectComponent,
     AddIssueComponent,
-    StaffAddComponent
+    StaffAddComponent,
+    UpdateIssueComponent
 
   ],
   imports: [
@@ -131,7 +137,9 @@ import { StaffAddComponent } from './views/admin/staff/staff-add/staff-add.compo
     RouterModule,
     HttpClientModule,
     NgxPaginationModule,
-    ProjectModule
+    ProjectModule,
+    Ng2OrderModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
